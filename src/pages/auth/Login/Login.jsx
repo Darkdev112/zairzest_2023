@@ -35,15 +35,6 @@ const Login = () => {
     }
   };
 
-  const handleGoogleSignIn=async(e)=>{
-    try{
-      e.preventDefault();
-      window.open("https://web-backend-3bsv.onrender.com/auth/google","_self");
-    }catch(error){
-      toast.error(error.response);
-    }
-  }
-
   const handleLoginChange = (e) => {
     setloginData({ ...loginData, [e.target.name]: e.target.value });
   };
@@ -76,8 +67,6 @@ const Login = () => {
 
           <button>Login</button>
         </form>
-
-        <button onClick={handleGoogleSignIn}>Sign in with Google</button>
         <div>
           Not registered ! <Link to="/register">Register</Link>
         </div>

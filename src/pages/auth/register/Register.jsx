@@ -15,6 +15,10 @@ const Register = () => {
   const handleRegisterSubmit = async (e) => {
     try {
       e.preventDefault();
+      if (registerData.regdno.length !== 10) {
+        toast.error("Registration Number must be 10 digits");
+        return;
+      }
       // const rurl="https://web-backend-3bsv.onrender.com/create/user";
       const rturl = "http://localhost:5000/create/user";
       const res = await axios.post(rturl, registerData);

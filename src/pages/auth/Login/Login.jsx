@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { ToastContainer } from "react-toastify";
 
 
 const Login = () => {
+  const nav=useNavigate();
   const [loginData, setloginData] = useState({
     email: "",
     password: "",
@@ -14,13 +15,20 @@ const Login = () => {
 
     try {
       e.preventDefault();
+      const luser= "https://web-backend-3bsv.onrender.com/login/user"
       const res = await axios.post(
-        "https://web-backend-3bsv.onrender.com/login/user",
+       luser,
         loginData
       );
       const token = res.data.token;
       console.log(token);
       toast.success("User Login done SuccessFully");
+
+      setTimeout(()=>{
+        nav("/");
+      },3000);
+
+
     } catch (error) {
       const err=error.response;
       if(err.data.msg==="Mail Id is not Registered"){

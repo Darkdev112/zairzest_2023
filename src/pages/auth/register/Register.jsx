@@ -26,7 +26,7 @@ const Register = () => {
       }
     } catch (error) {
       if (error.response.status === 500) {
-        toast.error("Email ID is already in use");
+        toast.error("User already Registered");
       } else {
         toast.error(error.message);
       }

@@ -12,16 +12,18 @@ const Login = () => {
     password: "",
   });
   const handleLoginSubmit = async (e) => {
-
+    e.preventDefault();
     try {
-      e.preventDefault();
       const luser= "https://web-backend-3bsv.onrender.com/login/user"
       const res = await axios.post(
        luser,
         loginData
       );
       const token = res.data.token;
-      console.log(token);
+      sessionStorage.setItem(
+        "Auth Token",
+        token
+      );
       toast.success("User Login done SuccessFully");
 
       setTimeout(()=>{

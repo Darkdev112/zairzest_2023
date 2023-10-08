@@ -13,22 +13,21 @@ const Register = () => {
     password: "",
   });
   const handleRegisterSubmit = async (e) => {
+    e.preventDefault();
     try {
-      e.preventDefault();
       if (registerData.regdno.length !== 10) {
         toast.error("Registration Number must be 10 digits");
         return;
       }
       const rturl="https://web-backend-3bsv.onrender.com/create/user";
       const res = await axios.post(rturl, registerData);
-      if (res.status === 200) {
-        toast.success("User Register done SuccessFully");
-      }
+      console.log(res);
+         toast.success("User Register done SuccessFully");
     } catch (error) {
-      if (error.response.status === 500) {
+      if (error.response.status === 500 || error.response.status===400) {
         toast.error("User already Registered");
       } else {
-        toast.error(error.message);
+        console.log(error);
       }
     }
   };

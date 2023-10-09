@@ -73,9 +73,23 @@
     }
 }
 
-
-@media(max-width:450px){
+@media(max-width: 500px){
+    .footer{
+        text-align: center;
+    }
+    .top-footer{
+        margin: auto;
+        font-size: 18px;
+    }
     .middle-footer-text{
-        width:340px;
+        margin: auto;
+        width: 320px;
+    }
+    .middle-footer-icon{
+        margin: auto;
+    }
+    .bottom-footer-text{
+        margin: auto;
+        width: 300px;
     }
 }

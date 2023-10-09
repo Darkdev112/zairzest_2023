@@ -11,6 +11,7 @@ const Main = () => {
   let authToken = sessionStorage.getItem("Auth Token");
 
   return (
+    
     <div className="main-page">
       <div className="top-part">
         <div className="left-part">
@@ -33,9 +34,6 @@ const Main = () => {
         </div>
       </div>
 
-      {/* <h1>Welcome</h1> */}
-
-      {/* {authToken ? (<Link to="/profile">Profile</Link>): (<Link to="/login"><button>Login</button></Link>)} */}
 
       <div className="mid-part">
         <div className="left-mid-part">
@@ -61,11 +59,11 @@ const Main = () => {
       <div className="bottom-part">
         <div>
           <h1 className="event-head">Events for you</h1>
-          <p>
+          <p className="para-bottom" >
             Everything has been made simple for you to scroll around and get the
             most{" "}
           </p>
-          <p style={{ marginTop: "-17px" }}>out of the options available.</p>
+          <p  className="para-bottom para-bottom2">out of the options available.</p>
           <div className="images-bottom">
             <img className="bottom-img1" style={{margin: "30px 0"}} src={techEvents} alt="" height={200} />
             <img className="bottom-img2" style={{margin: "30px 50px"}} src={funEvents} alt="" height={200} />

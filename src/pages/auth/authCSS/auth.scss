@@ -30,7 +30,7 @@ input[type=number]::-webkit-outer-spin-button {
         }
         .auth-input{
             height: 2.5rem;
-            width:100%;
+            width:95%;
             border-radius: 8px;
             border:1px solid #939393;
             padding-left:1rem;
@@ -43,6 +43,7 @@ input[type=number]::-webkit-outer-spin-button {
             justify-content: end;
             margin-top: -1.81rem;
             font-size: 1.2rem;
+            margin-right: 1rem;
         }
         .auth-sbutton{
             margin-top:1rem;
@@ -67,8 +68,10 @@ input[type=number]::-webkit-outer-spin-button {
 }
 @media(max-width:720px){
     .auth-container{
+        padding-top: 6rem;
 .login-left-container{
         display: none;
     }}
+    
   }
 

@@ -4,8 +4,23 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { ToastContainer } from "react-toastify";
 import "../authCSS/auth.scss";
+import Loginleft from "../../../component/loginLeft/Loginleft";
+import { AiOutlineEye } from 'react-icons/ai';
+import {AiOutlineEyeInvisible} from 'react-icons/ai';
 
 const Register = () => {
+  const [eye,setEye]=useState(true);
+  const [type,setType]=useState("password");
+  const handleEyeClick=()=>{
+    if(eye===false){
+      setType("text");
+      setEye(!eye);
+    }
+    else{
+      setType("Password");
+      setEye(!eye);
+    }
+  }
   const [registerData, setRegisteredData] = useState({
     name: "",
     regdno: "",
@@ -35,13 +50,16 @@ const Register = () => {
     setRegisteredData({ ...registerData, [e.target.name]: e.target.value });
   };
   return (
-    <div>
+    <div className="auth-container">
+      <Loginleft className="left-container"/>
+      <div className="auth-box-container">
       <div className="auth-box">
-        <h1>Experience the Future Tech</h1>
-        <p>Register for Zairzest 3.0</p>
+        <h1 className="auth-heading">Experience the Future Tech</h1>
+        <p className="auth-head-bottom">Register for Zairzest 3.0</p>
         <form className="auth-box-form" onSubmit={handleRegisterSubmit}>
           <div>
             <input
+              className="auth-input"
               type="text"
               required
               name="name"
@@ -52,6 +70,7 @@ const Register = () => {
           </div>
           <div>
             <input
+              className="auth-input"
               type="number"
               required
               name="regdno"
@@ -62,6 +81,7 @@ const Register = () => {
           </div>
           <div>
             <input
+              className="auth-input"
               type="email"
               required
               name="email"
@@ -70,24 +90,34 @@ const Register = () => {
               placeholder="Email here"
             />
           </div>
-          <div>
+          <div className="input-div">
             <input
-              type="password"
+              className="auth-input"
+              type={`${type}`}
               required
               name="password"
               value={registerData.password}
               onChange={handleRegisterChange}
               placeholder="Password"
             />
+            <span  className="eye-icon">{
+              eye==true ? 
+              <AiOutlineEyeInvisible onClick={()=>{handleEyeClick()}}/>
+               
+              :
+              <AiOutlineEye onClick={()=>{handleEyeClick()}}/>
+            }
+            </span>
           </div>
 
-          <button>Register</button>
+          <button className="auth-sbutton"> Register</button>
         </form>
-        <div>
-          Already registered ! <Link to="/login">Login</Link>
+        <div className="auth-bottom-text">
+          Already registered ? <Link to="/login">Login</Link>
         </div>
       </div>
       <ToastContainer theme="colored" />
+      </div>
     </div>
   );
 };

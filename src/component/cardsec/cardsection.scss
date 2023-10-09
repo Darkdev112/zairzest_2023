@@ -1,0 +1,19 @@
+.event-container{
+    padding: 1em 5%;
+
+    .mname{
+        font-family: Gilroy;
+        font-weight: 700;
+        font-size: 60px;
+        line-height: 72px;
+    }
+
+    .card-contain{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        gap: 50px;
+        justify-content: center;
+        align-items: center;
+    }
+}

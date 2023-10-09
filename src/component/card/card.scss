@@ -1,0 +1,84 @@
+.card-container{
+    width: 360px;
+    height: auto;
+    min-height: 590px;
+
+    .imgsec{
+        width: 100%;
+        height: 446px;
+        overflow: hidden;
+        
+        img{
+            margin: 8px;
+            width: 344px;
+            height: 430px;
+            object-fit: cover;
+        }
+    }
+
+    .nameenroll{
+        padding: 12px;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 8px 8px 8px;
+
+        .ename{
+            font-family: Gilroy;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .enroll{
+            font-family: Gilroy;
+            font-weight: 600;
+            font-size: 16px;
+            background-color: #01265D;
+            color: #fff;
+
+        }
+    }
+
+    .dtp{
+        padding: 12px;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 8px 8px 8px;
+
+        .edate{
+
+            .etitle{
+                color: #ABABAB;
+                font-weight: 600;
+                font-size: 12px;
+                font-family: Gilroy;
+            }
+
+            .dtime{
+                color: #000000;
+                font-weight: 600;
+                font-size: 14px;
+                font-family: Gilroy;
+            }
+        }
+
+        .even{
+            
+
+            .eventi{
+                color: #ABABAB;
+                font-weight: 600;
+                font-size: 12px;
+                font-family: Gilroy;
+            }
+
+            .ven{
+                color: #000000;
+                font-weight: 600;
+                font-size: 14px;
+                font-family: Gilroy;
+            }
+        }
+
+        
+    }
+}

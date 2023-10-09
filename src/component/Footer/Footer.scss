@@ -93,3 +93,24 @@
         width: 300px;
     }
 }
+@media(max-width: 408px){
+    .footer{
+        text-align: center;
+    }
+    .top-footer{
+        margin: auto;
+        width: 200px;
+        font-size: 15px;
+    }
+    .middle-footer-text{
+        margin: auto;
+        width: 220px;
+    }
+    .middle-footer-icon{
+        margin: auto;
+    }
+    .bottom-footer-text{
+        margin: auto;
+        width: 200px;
+    }
+}

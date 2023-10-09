@@ -5,8 +5,22 @@ import { toast } from "react-toastify";
 import { ToastContainer } from "react-toastify";
 import "../authCSS/auth.scss";
 import Loginleft from "../../../component/loginLeft/Loginleft";
+import { AiOutlineEye } from 'react-icons/ai';
+import {AiOutlineEyeInvisible} from 'react-icons/ai';
 
 const Login = () => {
+  const [eye,setEye]=useState(true);
+  const [type,setType]=useState("password");
+  const handleEyeClick=()=>{
+    if(eye===false){
+      setType("text");
+      setEye(!eye);
+    }
+    else{
+      setType("Password");
+      setEye(!eye);
+    }
+  }
   const nav = useNavigate();
   const [loginData, setloginData] = useState({
     email: "",
@@ -41,15 +55,17 @@ const Login = () => {
     setloginData({ ...loginData, [e.target.name]: e.target.value });
   };
   return (
-   <div>
+  
      <div className="auth-container">
-      <Loginleft />
+      <Loginleft className="left-container"/>
+      <div className="auth-box-container">
       <div className="auth-box">
-        <h1>Enter details to get your code</h1>
-        <p>This code is unique for every use</p>
+        <h1 className="auth-heading">Enter details to get your code</h1>
+        <p className="auth-head-bottom">This code is unique for every use</p>
         <form className="auth-box-form" onSubmit={handleLoginSubmit}>
           <div>
             <input
+              className="auth-input"
               type="email"
               required
               name="email"
@@ -58,8 +74,9 @@ const Login = () => {
               placeholder="Email here"
             />
           </div>
-          <div>
+          <div className="input-div">
             <input
+              className="auth-input"
               type="password"
               required
               name="password"
@@ -67,12 +84,20 @@ const Login = () => {
               onChange={handleLoginChange}
               placeholder="Password"
             />
+            <span  className="eye-icon">{
+              eye==true ? 
+              <AiOutlineEyeInvisible onClick={()=>{handleEyeClick()}}/>
+               
+              :
+              <AiOutlineEye onClick={()=>{handleEyeClick()}}/>
+            }
+            </span>
           </div>
 
-          <button>Login</button>
+          <button className="auth-sbutton">Login</button>
         </form>
-        <div>
-          Not registered ! <Link to="/register">Register</Link>
+        <div className="auth-bottom-text">
+          Not registered ? <Link to="/register">Register</Link>
         </div>
       </div>
     </div>

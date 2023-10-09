@@ -3,10 +3,11 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { ToastContainer } from "react-toastify";
-
+import "../authCSS/auth.scss";
+import Loginleft from "../../../component/loginLeft/Loginleft";
 
 const Login = () => {
-  const nav=useNavigate();
+  const nav = useNavigate();
   const [loginData, setloginData] = useState({
     email: "",
     password: "",
@@ -14,32 +15,23 @@ const Login = () => {
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
     try {
-      const luser= "https://web-backend-3bsv.onrender.com/login/user"
-      const res = await axios.post(
-       luser,
-        loginData
-      );
+      const luser = "https://web-backend-3bsv.onrender.com/login/user";
+      const res = await axios.post(luser, loginData);
       const token = res.data.token;
-      sessionStorage.setItem(
-        "Auth Token",
-        token
-      );
+      sessionStorage.setItem("Auth Token", token);
       toast.success("User Login done SuccessFully");
 
-      setTimeout(()=>{
+      setTimeout(() => {
         nav("/");
-      },3000);
-
-
+      }, 3000);
     } catch (error) {
-      const err=error.response;
-      if(err.data.msg==="Mail Id is not Registered"){
+      const err = error.response;
+      if (err.data.msg === "Mail Id is not Registered") {
         toast.error("Mail Id is not Registered");
       }
-      if(err.data.message==="Wrong Password"){
+      if (err.data.message === "Wrong Password") {
         toast.error("Wrong Password");
-      }
-      else{
+      } else {
         toast.error(error.response);
       }
     }
@@ -49,7 +41,9 @@ const Login = () => {
     setloginData({ ...loginData, [e.target.name]: e.target.value });
   };
   return (
-    <div>
+   <div>
+     <div className="auth-container">
+      <Loginleft />
       <div className="auth-box">
         <h1>Enter details to get your code</h1>
         <p>This code is unique for every use</p>
@@ -81,8 +75,9 @@ const Login = () => {
           Not registered ! <Link to="/register">Register</Link>
         </div>
       </div>
-      <ToastContainer theme="colored" />
     </div>
+    <ToastContainer theme="colored" />
+   </div>
   );
 };
 

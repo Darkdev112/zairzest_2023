@@ -9,6 +9,13 @@ const Navbar = ({userDetails}) => {
   const [showNav, setShowNav]=useState(true);
   const [animate,setAnimate]=useState(0);
   const navigate = useNavigate()
+  const authToken = sessionStorage.getItem("Auth Token");
+
+  const handleLogout = () => {
+    sessionStorage.removeItem("Auth Token");
+    navigate("/");
+    window.location.reload()
+  };
 
   const close=()=>{
     setAnimate(1);
@@ -22,12 +29,13 @@ const Navbar = ({userDetails}) => {
           <div className="sub_nav">
       <div className="navbar">
       <div className="navbar__left" >
-        <Link to={userDetails ? '/home' : '/'} onClick={close}><img src={Logo} alt="" className="logo" style={{width:"180px", marginRight: '13px'}}/></Link>
+        <Link to='/' onClick={close}><img src={Logo} alt="" className="logo" style={{width:"180px", marginRight: '13px'}}/></Link>
       </div>
       <div className="navbar__right">
-        <Link to={userDetails ? '/home' : '/'}><h4 className="navbar__text">About Us</h4></Link>
-        <Link to='/login'><h4 className="navbar__text">Register</h4></Link>
-        <Link to='/login'><h4 className="navbar__text">Sign In</h4></Link>
+        <Link to='/'><h4 className="navbar__text">About Us</h4></Link>
+        <Link to='/register'><h4 className="navbar__text">Register</h4></Link>
+        {!authToken && <Link to='/login'><h4 className="navbar__text">Sign In</h4></Link>}
+        {authToken && <h4 className="navbar__text" onClick={handleLogout}>Logout</h4>}
         <AiOutlineMenu className="navbar__menu" onClick={()=>{setShowNav(false);setAnimate(0)}}/>
       </div>
     </div>
@@ -45,8 +53,9 @@ const Navbar = ({userDetails}) => {
       <div className="close_icon"><RxCross1 className="navbar__menu" onClick={close}/></div>
       <div className="nav-content-container">
       <Link to="/" className="aboutUs-link" onClick={close}><div className="nav-button-content">About Us</div></Link>
-      <Link to="/" className="aboutUs-link" onClick={close}><div className="nav-button-content">Register</div></Link>
-      <Link to="/" className="aboutUs-link" onClick={close}><div className="nav-button-content">Sign In</div></Link>
+      <Link to="/register" className="aboutUs-link" onClick={close}><div className="nav-button-content">Register</div></Link>
+      {!authToken && <Link className="aboutUs-link" to='/login'><div className="nav-button-content" onClick={close}>Sign In</div></Link>}
+      {authToken && <div className="nav-button-content" onClick={() => {handleLogout();close();}}>Logout</div>}
       </div>
     </div>
       </div>

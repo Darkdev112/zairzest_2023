@@ -6,12 +6,16 @@ import zen from "../../assets/images/zen.png";
 import workshops from "../../assets/images/workshops.png";
 import techEvents from "../../assets/images/tech-events.png";
 import funEvents from "../../assets/images/fun-events.png";
+import Footer from "../../component/Footer/Footer";
+import Navbar from '../../component/Navbar/Navbar';
 
 const Main = () => {
   let authToken = sessionStorage.getItem("Auth Token");
 
   return (
-    
+    <>
+    <Navbar/>
+    {authToken ? (<Link to="/profile">Profile</Link>): (<Link to="/login"><button>Login</button></Link>)}
     <div className="main-page">
       <div className="top-part">
         <div className="left-part">
@@ -72,6 +76,8 @@ const Main = () => {
         </div>
       </div>
     </div>
+    <Footer />
+    </>
   );
 };
 

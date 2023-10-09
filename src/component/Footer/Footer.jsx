@@ -1,6 +1,6 @@
 import React from "react";
 import "./Footer.scss";
-
+import zairzaLogo from '../../assets/images/zairza-logo.png';
 import {LuGithub} from "react-icons/lu";
 import {AiOutlineInstagram} from "react-icons/ai";
 import {AiOutlineMail} from "react-icons/ai";
@@ -34,8 +34,10 @@ const Footer = () => {
         </p>
        </div>
        <div className="bottom-footer-icon">
-       <div className="bottom-footer-icons">Presented by</div>
-       <div className="bottom-footer-icons">icon1</div>
+       <i className="bottom-footer-icons">Presented by</i>
+       <div className="bottom-footer-icons">
+          <img src={zairzaLogo} alt="" />
+       </div>
        </div>
       </div>
     </div>

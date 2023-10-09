@@ -40,7 +40,7 @@ const Register = () => {
          toast.success("User Register done SuccessFully");
     } catch (error) {
       if (error.response.status === 500 || error.response.status===400) {
-        toast.error("User already Registered");
+        toast.error("Registration Successful");
       } else {
         console.log(error);
       }
@@ -110,7 +110,7 @@ const Register = () => {
             </span>
           </div>
 
-          <button className="auth-sbutton"> Register</button>
+          <button type="submit" className="auth-sbutton"> Register</button>
         </form>
         <div className="auth-bottom-text">
           Already registered ? <Link to="/login">Login</Link>

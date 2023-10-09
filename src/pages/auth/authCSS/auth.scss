@@ -53,6 +53,10 @@ input[type=number]::-webkit-outer-spin-button {
             background: #01265D;
             border-radius: 8px;
             color:white;
+            cursor: pointer;
+        }
+        .auth-sbutton:hover{
+            background-color: #011738;
         }
         .auth-bottom-text{
             margin-top: 1rem;

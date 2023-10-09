@@ -29,11 +29,12 @@ const Login = () => {
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
     try {
+      console.log("login");
       const luser = "https://web-backend-3bsv.onrender.com/login/user";
       const res = await axios.post(luser, loginData);
       const token = res.data.token;
       sessionStorage.setItem("Auth Token", token);
-      toast.success("User Login done SuccessFully");
+      toast.success("Login Successful");
 
       setTimeout(() => {
         nav("/");
@@ -93,8 +94,7 @@ const Login = () => {
             }
             </span>
           </div>
-
-          <button className="auth-sbutton">Login</button>
+          <button type="submit" className="auth-sbutton">Login</button>
         </form>
         <div className="auth-bottom-text">
           Not registered ? <Link to="/register">Register</Link>

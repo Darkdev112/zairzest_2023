@@ -10,12 +10,11 @@ import Footer from "../../component/Footer/Footer";
 import Navbar from '../../component/Navbar/Navbar';
 
 const Main = () => {
-  let authToken = sessionStorage.getItem("Auth Token");
+  const authToken = sessionStorage.getItem("Auth Token");
 
   return (
     <>
     <Navbar/>
-    {authToken ? (<Link to="/profile">Profile</Link>): (<Link to="/login"><button>Login</button></Link>)}
     <div className="main-page">
       <div className="top-part">
         <div className="left-part">
@@ -30,7 +29,8 @@ const Main = () => {
             <p className="para-left para-left2">
               the most awaited fest . Zairzest 2.0 presented by Zairza.
             </p>
-            <button className="btn-rn">Register Now</button>
+            {!authToken && <Link to='/register'><button className="btn-rn" >Register Now</button></Link>}
+            {authToken && <Link to='/profile'><button className="btn-rn" >Dashboard</button></Link>}
           </div>
         </div>
         <div className="right-part">
@@ -69,9 +69,9 @@ const Main = () => {
           </p>
           <p  className="para-bottom para-bottom2">out of the options available.</p>
           <div className="images-bottom">
-            <img className="bottom-img1" style={{margin: "30px 0"}} src={techEvents} alt="" height={200} />
-            <img className="bottom-img2" style={{margin: "30px 50px"}} src={funEvents} alt="" height={200} />
-            <img className="bottom-img1" style={{margin: "30px 0"}} src={workshops} alt="" height={200} />
+            <Link to={authToken ? '/tech-events': '/'}><img className="bottom-img bottom-img-fix1"  src={techEvents} alt="" height={200} /></Link>
+            <Link to={authToken ? '/tech-events': '/'}><img className="bottom-img bottom-img-fix2"  src={funEvents} alt="" height={200} /></Link>
+            <Link to={authToken ? '/tech-events': '/'}><img className="bottom-img bottom-img-fix1"  src={workshops} alt="" height={200} /></Link>
           </div>
         </div>
       </div>

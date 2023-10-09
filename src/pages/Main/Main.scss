@@ -30,6 +30,10 @@
         font-weight: 700;
         mix-blend-mode: screen;
         border: none;
+        cursor: pointer;
+      }
+      .btn-rn:hover{
+        opacity: 0.9;
       }
     }
   }
@@ -55,16 +59,28 @@
 //bottom portion
 
 .bottom-part {
-  height: 100vh;
+  height: fit-content;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 150px;
   .event-head {
     font-size: 40px;
   }
   .para-bottom2{
     margin-top: -2px; 
+  }
+  .bottom-img{
+    margin: 2rem;
+  }
+  .bottom-img:hover{
+    scale: 1.1;
+    transition: all 0.5s;
+  }
+  .bottom-img:not(:hover){
+    scale : 1;
+    transition: all 0.5s;
   }
 }
 
@@ -168,7 +184,7 @@
 }
 @media (max-width: 748px) {
   .bottom-part {
-    margin-top: 280px;
+    margin-top: 150px;
     margin-bottom: 150px;
   }
 }

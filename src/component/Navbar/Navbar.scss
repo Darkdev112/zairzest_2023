@@ -14,7 +14,14 @@
     z-index: 5;
     a{
       text-decoration: none;
-      color: white;
+      color: #FFFFFF;
+    }
+    h4{
+      text-decoration: none;
+      color: #FFFFFF;
+    }
+    h4:hover{
+      cursor: pointer;
     }
     .navbar__left{
       display: flex;
@@ -40,7 +47,7 @@
         color:black;
       }
       .navbar__menu{
-        color: white;
+        color: #FFFFFF;
         font-size: 1.5em;
       }
     }
@@ -52,6 +59,13 @@
     a{
       text-decoration: none;
       color: #FFFFFF;
+    }
+    h4{
+      text-decoration: none;
+      color: #FFFFFF;
+    }
+    h4:hover{
+      cursor: pointer;
     }
     position: fixed;
     z-index: 6;
@@ -79,7 +93,8 @@
     }
     .nav-button-content{
       font-size: 1.5rem;
-      margin-bottom: 2rem;margin-left: 3rem;
+      margin-bottom: 2rem;
+      margin-left: 3rem;
     }
     @keyframes slideInRight {
       0% {
@@ -102,6 +117,12 @@
     a{
       text-decoration: none;
       color: #FFFFFF;
+    }
+    h4{
+      color: #FFFFFF;
+    }
+    h4:hover{
+      cursor: pointer;
     }
     position: fixed;
     z-index: 2;

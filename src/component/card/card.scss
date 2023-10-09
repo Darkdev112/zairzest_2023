@@ -6,11 +6,13 @@
     .imgsec{
         width: 100%;
         height: 446px;
+        overflow: hidden;
         
         img{
             margin: 8px;
             width: 344px;
             height: 430px;
+            object-fit: cover;
         }
     }
 

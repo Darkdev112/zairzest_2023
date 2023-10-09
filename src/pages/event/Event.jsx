@@ -1,5 +1,7 @@
 import React from 'react'
 import CardSection from '../../component/cardsec/CardSection'
+import Navbar from '../../component/Navbar/Navbar';
+import Footer from '../../component/Footer/Footer';
 
 const Event = () => {
     const name = "Tech Events";
@@ -87,9 +89,10 @@ const Event = () => {
     ]
   return (
     <>
-      <div className="event">
+      <Navbar />
       <CardSection name={name} data={data} />
-      </div>
+      <Footer />
+      
     </>
   )
 }

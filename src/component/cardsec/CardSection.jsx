@@ -6,6 +6,7 @@ const CardSection = ({name, data}) => {
     <>
       <div className="event-container">
         <div className="mname">{name}</div>
+        <br /><br />
         <div className="card-contain">
             {data?.map((data,index)=>(
               <Card data={data} index={index} />

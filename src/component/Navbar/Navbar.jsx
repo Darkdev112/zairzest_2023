@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AiOutlineMenu } from 'react-icons/ai';
 import { RxCross1 } from 'react-icons/rx';
 import "./Navbar.scss"
-// import Logo from "";
+import Logo from "../../assets/images/zairzest_logo.png"
 
 const Navbar = ({userDetails}) => {
   const [showNav, setShowNav]=useState(true);
@@ -22,8 +22,7 @@ const Navbar = ({userDetails}) => {
           <div className="sub_nav">
       <div className="navbar">
       <div className="navbar__left" >
-        {/* <Link to={userDetails ? '/home' : '/'} onClick={close}><img src={Logo} alt="" className="logo" style={{width:"60px", marginRight: '13px'}}/></Link> */}
-      {/* <h1 style={{color: 'red', fontSize: '23px', letterSpacing:'1.5px'}}>FIT SIMULATE</h1> */}
+        <Link to={userDetails ? '/home' : '/'} onClick={close}><img src={Logo} alt="" className="logo" style={{width:"180px", marginRight: '13px'}}/></Link>
       </div>
       <div className="navbar__right">
         <Link to={userDetails ? '/home' : '/'}><h4 className="navbar__text">About Us</h4></Link>

@@ -21,13 +21,13 @@ const Main = () => {
         <div className="left-part">
           <div className="content-left">
             <h1 className="left-head">Experience the Future</h1>
-            <h1 className="left-head " style={{ marginTop: "-28px" }}>
+            <h1 className="left-head " style={{ marginTop: "-5px" }}>
               Tech with zairza
             </h1>
             <p className="para-left">
               Release all your stress with the exciting Tech and Fun events in
             </p>
-            <p className="para-left">
+            <p className="para-left para-left2">
               the most awaited fest . Zairzest 2.0 presented by Zairza.
             </p>
             <button className="btn-rn">Register Now</button>
@@ -44,8 +44,8 @@ const Main = () => {
           <img className="zen-image" src={zen} alt="" height={500} />
         </div>
         <div className="right-mid-part">
-          <h1>Zen will guide you</h1>
-          <h3 style={{ color: "rgba(232, 46, 138, 1)", fontWeight: "600" }}>
+          <h1 style={{marginBottom: '10px'}}>Zen will guide you</h1>
+          <h3 style={{ color: "rgba(232, 46, 138, 1)", fontWeight: "600", marginBottom: '10px' }}>
             Zest. For. Tech.
           </h3>
           <p>
@@ -62,7 +62,7 @@ const Main = () => {
 
       <div className="bottom-part">
         <div>
-          <h1 className="event-head">Events for you</h1>
+          <h1 className="event-head" style={{marginBottom: '15px'}}>Events for you</h1>
           <p className="para-bottom" >
             Everything has been made simple for you to scroll around and get the
             most{" "}

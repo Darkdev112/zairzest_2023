@@ -34,13 +34,13 @@ const Register = () => {
         toast.error("Registration Number must be 10 digits");
         return;
       }
-      const rturl="https://web-backend-3bsv.onrender.com/create/user";
+      const rturl="http://localhost:5000/create/user";
       const res = await axios.post(rturl, registerData);
       console.log(res);
-         toast.success("User Register done SuccessFully");
+         toast.success("Registration Successful");
     } catch (error) {
       if (error.response.status === 500 || error.response.status===400) {
-        toast.error("Registration Successful");
+        toast.error("Registration Failed");
       } else {
         console.log(error);
       }

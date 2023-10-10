@@ -11,7 +11,7 @@ const Navbar = ({userDetails}) => {
   const navigate = useNavigate()
   const authToken = sessionStorage.getItem("Auth Token");
 
-  const handleLogout = () => {
+  const handleLogout = async() => {
     sessionStorage.removeItem("Auth Token");
     navigate("/");
     window.location.reload()

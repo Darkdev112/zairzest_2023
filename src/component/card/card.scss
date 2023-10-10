@@ -23,20 +23,26 @@
         display: flex;
         justify-content: space-between;
         margin: 0 8px 8px 8px;
+        align-items: center;
 
         .ename{
-            font-family: Gilroy;
             font-weight: 600;
             font-size: 18px;
         }
 
         .enroll{
-            font-family: Gilroy;
+             
             font-weight: 600;
             font-size: 16px;
             background-color: #01265D;
             color: #fff;
-
+            border-radius: 8px;
+            padding: 16px 24px;
+            cursor : pointer
+        }
+        
+        .enroll:hover{
+            opacity: 0.9;
         }
     }
 
@@ -52,14 +58,14 @@
                 color: #ABABAB;
                 font-weight: 600;
                 font-size: 12px;
-                font-family: Gilroy;
+                 
             }
 
             .dtime{
                 color: #000000;
                 font-weight: 600;
                 font-size: 14px;
-                font-family: Gilroy;
+                 
             }
         }
 
@@ -70,14 +76,14 @@
                 color: #ABABAB;
                 font-weight: 600;
                 font-size: 12px;
-                font-family: Gilroy;
+                 
             }
 
             .ven{
                 color: #000000;
                 font-weight: 600;
                 font-size: 14px;
-                font-family: Gilroy;
+                 
             }
         }
 

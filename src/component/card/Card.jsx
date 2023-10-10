@@ -1,24 +1,47 @@
 import './card.scss';
+import cheers from '../../assets/images/cheers.jpg'
+import axios from 'axios';
+import {toast} from 'react-toastify'
 
-const Card = ({data,index}) => {
+const Card = ({d}) => {
+  const handleClick = async () => {
+    const authToken = sessionStorage.getItem('Auth Token')
+    try {
+      const response = await axios.patch('http://localhost:5000/enroll/event',{ id : d._id}, {
+        headers : {
+          'Content-Type' : 'application/json',
+          'Authorization' : `Bearer ${authToken}`
+        }
+      })
+      if(response.data.user){
+        toast.success('Enroll Successful')
+        setTimeout(() => {
+          window.location.reload()
+        },2000)
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error('Could not Enroll')
+    }
+  }
   return (
     <>
-      <div className="card-container" key={index}>
+      <div className="card-container">
         <div className="imgsec">
-            <img src={data.img} alt="" />
+            <img src={cheers} alt="event" />
         </div>
         <div className="nameenroll">
-            <div className="ename">{data.name}</div>
-            <button className="enroll" disabled={data.isEnrolled} >{data.isEnrolled?"Enrolled":"Enroll Now"}</button>
+            <div className="ename">{d.event_name}</div>
+            <button className="enroll" disabled={d.isEnrolled} onClick={handleClick}>{d.isEnrolled?"Enrolled":"Enroll Now"}</button>
         </div>
         <div className="dtp">
             <div className="edate">
                 <div className="etitle">Date & Time</div>
-                <div className="dtime">{data.date} - {data.time}</div>
+                <div className="dtime">{d.event_date}</div>
             </div>
             <div className="even">
                 <div className="eventi">Venue</div>
-                <div className="ven">{data.venue}</div>
+                <div className="ven">{d.event_venue}</div>
             </div>
         </div>
       </div>

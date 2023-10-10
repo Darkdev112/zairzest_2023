@@ -25,9 +25,12 @@ const CardSection = ({ name, data, userEvents }) => {
     }
     else if(name === 'Your registered events'){
       userEvents?.forEach((event) => {
-        setDispData((prev) => [...prev,{...event, isEnrolled : 0}])
+        setDispData((prev) => [...prev,{...event, isEnrolled : 1}])
       })
     }
+    setDispData((prev) => [...(prev.sort((a,b) => {
+        return a.isEnrolled - b.isEnrolled
+    }))])
   }
 
   useEffect(() => {
@@ -45,6 +48,7 @@ const CardSection = ({ name, data, userEvents }) => {
             <Card d={d} key={index} />
           ))}
         </div>
+        {dispData.length===0 && <p className='null_text'>No events to display here</p>}
       </div>
       <ToastContainer theme='colored'/>
     </>

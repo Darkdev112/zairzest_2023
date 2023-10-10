@@ -1,8 +1,7 @@
 .event-container{
-    padding: 1em 5%;
+    padding: 2rem 5%;
 
     .mname{
-        font-family: Gilroy;
         font-weight: 700;
         font-size: 60px;
         line-height: 72px;
@@ -13,7 +12,19 @@
         flex-wrap: wrap;
         width: 100%;
         gap: 50px;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
+    }
+}
+
+@media (max-width: 1350px) {
+    .card-contain{
+        justify-content : flex-start !important ;
+    }
+}
+
+@media (max-width: 860px) {
+    .card-contain{
+        justify-content : center !important ;
     }
 }

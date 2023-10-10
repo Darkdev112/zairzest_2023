@@ -30,9 +30,10 @@ const Login = () => {
     e.preventDefault();
     try {
       console.log("login");
-      const luser = "https://web-backend-3bsv.onrender.com/login/user";
+      const luser = "http://localhost:5000/login/user";
       const res = await axios.post(luser, loginData);
-      const token = res.data.token;
+      console.log("login out");
+      const token = res.data?.token;
       sessionStorage.setItem("Auth Token", token);
       toast.success("Login Successful");
 
@@ -41,10 +42,10 @@ const Login = () => {
       }, 3000);
     } catch (error) {
       const err = error.response;
-      if (err.data.msg === "Mail Id is not Registered") {
+      if (err.data?.msg === "Mail Id is not Registered") {
         toast.error("Mail Id is not Registered");
       }
-      if (err.data.message === "Wrong Password") {
+      if (err.data?.message === "Wrong Password") {
         toast.error("Wrong Password");
       } else {
         toast.error(error.response);

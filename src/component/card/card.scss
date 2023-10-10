@@ -44,6 +44,10 @@
         .enroll:hover{
             opacity: 0.9;
         }
+
+        .enroll:disabled{
+            background-color: #E82E8A;
+        }
     }
 
     .dtp{

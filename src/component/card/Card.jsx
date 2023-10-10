@@ -7,7 +7,7 @@ const Card = ({d}) => {
   const handleClick = async () => {
     const authToken = sessionStorage.getItem('Auth Token')
     try {
-      const response = await axios.patch('http://localhost:5000/enroll/event',{ id : d._id}, {
+      const response = await axios.patch('https://web-backend-3bsv.onrender.com/enroll/event',{ id : d._id}, {
         headers : {
           'Content-Type' : 'application/json',
           'Authorization' : `Bearer ${authToken}`

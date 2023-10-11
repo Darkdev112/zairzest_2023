@@ -5,7 +5,7 @@
 }
 
 .login-left-container{
-    background-color: #00255C;
+    background-image: url(../../assets/images/bg-register.png);
     color:white;
     display: flex;
     align-items: center;
@@ -47,3 +47,36 @@
     border-radius: 50%;
 }
 
+@media(max-width: 1096px){
+    .login-left-container{
+        height: 115vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+@media(max-width:1020px){
+    .login-left-container{
+        width: 275px;
+    }
+}
+
+@media(max-width:871px){
+    .login-left-container{
+        width: 200px;
+    }
+    .loginleft-text{
+        width:300px;
+        font-size:25px;
+    }
+    
+    .loginleft-para{
+        width:300px;
+    }
+    
+}
+@media(max-width: 799px){
+    .login-left-container{
+        
+    }
+}

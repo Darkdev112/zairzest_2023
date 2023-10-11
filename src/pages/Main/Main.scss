@@ -15,6 +15,14 @@
       .left-head {
         font-size: 50px;
       }
+      .zairza-head{
+        font-size: 50px;
+        margin-top: 10px;
+        padding-left: 8px;
+        width: 150px;
+        background-color: rgba(232, 46, 138, 1);
+        border-radius: 5px;
+      }
       .para-left {
         margin-top: 25px;
         color: aliceblue;
@@ -28,12 +36,12 @@
         width: 130px;
         border-radius: 5px;
         font-weight: 700;
-        mix-blend-mode: screen;
+        color: rgba(204, 32, 173, 1);
         border: none;
         cursor: pointer;
       }
       .btn-rn:hover{
-        opacity: 0.9;
+        opacity: 0.7;
       }
     }
   }
@@ -51,6 +59,12 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
+  .zen-mid{
+    background-color: rgba(232, 46, 138, 1);
+    color: white;
+    border-radius: 5px;
+    padding: 0 8px;
+  }
   .right-mid-part {
     width: 550px;
   }
@@ -85,7 +99,14 @@
 }
 
 //media queries
-
+@media(max-width: 1395px){
+  .top-part {
+    .right-img {
+      height: 700px;
+    }
+  }
+  
+}
 @media (max-width: 1216px) {
   .top-part {
     .left-part {
@@ -93,6 +114,10 @@
       .content-left {
         .left-head {
           font-size: 40px;
+        }
+        .zairza-head{
+          font-size: 40px;
+          width: 122px;
         }
       }
     }
@@ -102,13 +127,14 @@
       align-items: end;
     }
     .right-img {
-      height: 500px;
+      height: 600px;
     }
   }
 }
 
 @media (max-width: 1016px) {
   .top-part {
+    height: 89vh;
     .left-part {
       margin-left: 80px;
       .content-left {
@@ -121,7 +147,7 @@
       margin-right: 80px;
     }
     .right-img {
-      height: 450px;
+      height: 500px;
     }
   }
 
@@ -139,6 +165,7 @@
 
 @media (max-width: 938px) {
   .top-part {
+    height: 100vh;
     padding-top: 100px;
     flex-direction: column;
     align-items: center;
@@ -149,13 +176,19 @@
         .left-head {
           font-size: 40px;
         }
+        .left-head2{
+          margin-bottom: 10px;
+        }
+        .zairza-head{
+          margin: auto;
+        }
       }
     }
     .right-part {
       margin-right: 0px;
     }
     .right-img {
-      height: 350px;
+      height: 400px;
     }
   }
 
@@ -191,6 +224,7 @@
 
 @media(max-width:500px){
   .top-part {
+    height: 100vh;
     padding-top: 100px;
     .left-part {
       margin-left: 0px;
@@ -198,6 +232,11 @@
       .content-left {
         .left-head {
           font-size: 35px;
+        }
+        .zairza-head{
+          font-size: 35px;
+          padding-left: 2px;
+          width: 110px;
         }
         .para-left{
           font-size: 14px;
@@ -208,8 +247,8 @@
       margin-right: 0px;
     }
     .right-img {
-      margin-top: 50px;
-      height: 300px;
+      margin-top: 40px;
+      height: 350px;
     }
   }
 

@@ -1,5 +1,5 @@
 .footer{
-    background-color:#191436;
+    background-color:rgba(15, 21, 26, 1);
     color: white;
     padding:5rem 3.5rem;
 }
@@ -54,6 +54,10 @@
     border-radius: 50%;
 }
 
+.middle-footer-icons:hover{
+    scale: 1.1;
+    transition: all 0.2s;
+}
 
 @media(max-width:780px){
     .footer{

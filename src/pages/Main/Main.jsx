@@ -19,22 +19,23 @@ const Main = () => {
       <div className="top-part">
         <div className="left-part">
           <div className="content-left">
-            <h1 className="left-head">Experience the Future</h1>
-            <h1 className="left-head " style={{ marginTop: "-5px" }}>
-              Tech with zairza
+            <h1 className="left-head">Enter into Digital</h1>
+            <h1 className="left-head left-head2" style={{ marginTop: "-5px" }}>
+            Playground with 
             </h1>
+            <h1 className="zairza-head">Zairza</h1>
             <p className="para-left">
               Release all your stress with the exciting Tech and Fun events in
             </p>
             <p className="para-left para-left2">
-              the most awaited fest . Zairzest 2.0 presented by Zairza.
+              the most awaited fest . Zairzest 3.0 presented by Zairza.
             </p>
             {!authToken && <Link to='/register'><button className="btn-rn" >Register Now</button></Link>}
             {authToken && <Link to='/profile'><button className="btn-rn" >Dashboard</button></Link>}
           </div>
         </div>
         <div className="right-part">
-          <img className="right-img" src={Right} alt="" height={550} />
+          <img className="right-img" src={Right} alt="" height={750} />
         </div>
       </div>
 
@@ -44,7 +45,7 @@ const Main = () => {
           <img className="zen-image" src={zen} alt="" height={500} />
         </div>
         <div className="right-mid-part">
-          <h1 style={{marginBottom: '10px'}}>Zen will guide you</h1>
+          <h1 style={{marginBottom: '10px'}}><span className="zen-mid">Zen 3.0</span> will guide you !</h1>
           <h3 style={{ color: "rgba(232, 46, 138, 1)", fontWeight: "600", marginBottom: '10px' }}>
             Zest. For. Tech.
           </h3>

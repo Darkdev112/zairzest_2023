@@ -35,7 +35,6 @@ const CardSection = ({ name, data, userEvents }) => {
 
   useEffect(() => {
     getFilteredData()
-    console.log('Ran now');
   }, [data])
 
   return (

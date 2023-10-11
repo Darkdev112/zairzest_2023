@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { ToastContainer } from "react-toastify";
@@ -12,6 +12,7 @@ import scan from "../../../assets/images/scan.jpg";
 const Register = () => {
   const [eye, setEye] = useState(true);
   const [type, setType] = useState("password");
+  const navigate = useNavigate();
   const [registerData, setRegisteredData] = useState({
     name: "",
     regdno: "",
@@ -56,7 +57,7 @@ const Register = () => {
       formdata.append("password", registerData.password);
       formdata.append("file", registerData.file);
 
-      const rturl = "http://localhost:5000/create/user";
+      const rturl = "https://web-backend-3bsv.onrender.com/create/user";
       const res = await axios.post(rturl, formdata, {
         headers: {
           "Content-Type": `multipart/form-data; boundary=${formdata._boundary}`,
@@ -64,6 +65,7 @@ const Register = () => {
       });
       console.log(res);
       toast.success("Registration Successful");
+      navigate('/login');
     } catch (error) {
       if (error.response.status === 500 || error.response.status === 400) {
         toast.error("Registration Failed");

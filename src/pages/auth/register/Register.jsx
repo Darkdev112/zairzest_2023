@@ -142,13 +142,16 @@ const Register = () => {
             </div>
             <div className="payment-part">
               <img className="payment-image" src={scan} alt="" />
-              <input
-                className="payment-upload"
-                type="file"
-                required
-                onChange={handleRegisterChange}
-                name="file"
-              />
+              <div className="payment-upload">
+                <input
+                  // className="payment-upload"
+                  type="file"
+                  required
+                  onChange={handleRegisterChange}
+                  name="file"
+                />
+                <h3 className="upload-text">(Upload the screenshot of the payment for the events with Zen 3.0!)</h3>
+              </div>
             </div>
             <button type="submit" className="auth-sbutton">
               {" "}

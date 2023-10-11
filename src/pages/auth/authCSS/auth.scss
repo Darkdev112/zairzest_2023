@@ -74,7 +74,6 @@ input[type=number]::-webkit-outer-spin-button {
             padding-left:1rem;
             margin-top: 0.9rem;
             display: flex;
-            // flex-direction: row;
             border-radius: 8px;
             justify-content: center;
             align-items: center;
@@ -84,6 +83,17 @@ input[type=number]::-webkit-outer-spin-button {
             .payment-upload{
                 width: 50%;
                 height: 2.5rem;
+            }
+            input::file-selector-button{
+                color: white;
+                background-color: #01265D;
+                border-radius: 5px;
+                height: 2.5rem;
+                padding: 0 10px;
+            }
+            .upload-text{
+                margin-top: 10px;
+                font-size: 12px;
             }
         }
     }
@@ -96,6 +106,7 @@ input[type=number]::-webkit-outer-spin-button {
     }
     .payment-part{
         flex-direction: column;
+        margin-bottom: 65px;
     }
     .auth-box-container{
         margin-bottom: 50px;

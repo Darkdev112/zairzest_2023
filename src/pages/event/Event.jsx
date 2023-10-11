@@ -13,13 +13,13 @@ const Event = () => {
         const authToken = sessionStorage.getItem('Auth Token')
         try {
             const response = await Promise.all([
-                axios.get('https://web-backend-3bsv.onrender.com/getall/event',{
+                axios.get('http://localhost:5000/getall/event',{
                     headers : {
                         'Content-Type' : 'application/json',
                         'Authorization' : `Bearer ${authToken}`
                     }
                 }),
-                axios.get('https://web-backend-3bsv.onrender.com/get/user',{
+                axios.get('http://localhost:5000/get/user',{
                     headers : {
                         'Content-Type' : 'application/json',
                         'Authorization' : `Bearer ${authToken}`

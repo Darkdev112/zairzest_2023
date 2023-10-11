@@ -30,7 +30,7 @@ const Login = () => {
     e.preventDefault();
     try {
       console.log("login");
-      const luser = "https://web-backend-3bsv.onrender.com/login/user";
+      const luser = "http://localhost:5000/login/user";
       const res = await axios.post(luser, loginData);
       console.log("login out");
       const token = res.data?.token;

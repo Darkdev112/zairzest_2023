@@ -31,19 +31,21 @@ input[type=number]::-webkit-outer-spin-button {
         .auth-input{
             height: 2.5rem;
             width:95%;
+            margin-top: 0.9rem;
             border-radius: 8px;
             border:1px solid #939393;
             padding-left:1rem;
             font-size: 1rem;
-            margin-top: 0.9rem;
         }
-        
+        .input-div{
+            position: relative;
+
+        }
         .eye-icon{
-            display: flex;
-            justify-content: end;
-            margin-top: -1.81rem;
+            top: 1.5rem;
+            left: 90%;
+            position: absolute;
             font-size: 1.2rem;
-            margin-right: 1rem;
         }
         .auth-sbutton{
             margin-top:1rem;
@@ -67,15 +69,39 @@ input[type=number]::-webkit-outer-spin-button {
                 color: #E82E8A;
             }
         }
+        .payment-part{
+            width:95%;
+            padding-left:1rem;
+            margin-top: 0.9rem;
+            display: flex;
+            flex-direction: row;
+            border-radius: 8px;
+            justify-content: center;
+            align-items: center;
+            .payment-image{
+                width: 200px;
+            }
+            .payment-upload{
+                width: 50%;
+                height: 2.5rem;
+            }
+        }
     }
 }
 }
+
+@media(max-width:920px){
+    .payment-part{
+        flex-direction: column; //make image responsive here
+    }
+}
+
 @media(max-width:720px){
     .auth-container{
         padding-top: 6rem;
-.login-left-container{
+    .login-left-container{
         display: none;
     }}
-    
-  }
+}
+
 

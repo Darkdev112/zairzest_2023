@@ -7,10 +7,19 @@ import "../authCSS/auth.scss";
 import Loginleft from "../../../component/loginLeft/Loginleft";
 import { AiOutlineEye } from 'react-icons/ai';
 import {AiOutlineEyeInvisible} from 'react-icons/ai';
+import scan from '../../../assets/images/scan.jpg'
 
 const Register = () => {
   const [eye,setEye]=useState(true);
   const [type,setType]=useState("password");
+  const [registerData, setRegisteredData] = useState({
+    name: "",
+    regdno: "",
+    email: "",
+    password: "",
+    file : null
+  });
+  
   const handleEyeClick=()=>{
     if(eye===false){
       setType("text");
@@ -21,12 +30,16 @@ const Register = () => {
       setEye(!eye);
     }
   }
-  const [registerData, setRegisteredData] = useState({
-    name: "",
-    regdno: "",
-    email: "",
-    password: "",
-  });
+  
+  const handleRegisterChange = (e) => {
+    if(e.target.name === "file"){
+      setRegisteredData({ ...registerData, [e.target.name]: e.target.files[0] });
+    }
+    else{
+      setRegisteredData({ ...registerData, [e.target.name]: e.target.value });
+    }
+  };
+
   const handleRegisterSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -34,10 +47,23 @@ const Register = () => {
         toast.error("Registration Number must be 10 digits");
         return;
       }
-      const rturl="https://web-backend-3bsv.onrender.com/create/user";
-      const res = await axios.post(rturl, registerData);
+      
+      const formdata = new FormData()
+      formdata.append('name', registerData.name)
+      formdata.append('regdno', registerData.regdno)
+      formdata.append('email', registerData.email)
+      formdata.append('password', registerData.password)
+      formdata.append('file', registerData.file)
+      
+      const rturl="http://localhost:5000/create/user";
+      const res = await axios.post(rturl, formdata, {
+        headers : {
+          'Content-Type' : `multipart/form-data; boundary=${formdata._boundary}`
+        }
+      });
       console.log(res);
-         toast.success("Registration Successful");
+      toast.success("Registration Successful");
+
     } catch (error) {
       if (error.response.status === 500 || error.response.status===400) {
         toast.error("Registration Failed");
@@ -46,9 +72,7 @@ const Register = () => {
       }
     }
   };
-  const handleRegisterChange = (e) => {
-    setRegisteredData({ ...registerData, [e.target.name]: e.target.value });
-  };
+
   return (
     <div className="auth-container">
       <Loginleft className="left-container"/>
@@ -99,17 +123,26 @@ const Register = () => {
               value={registerData.password}
               onChange={handleRegisterChange}
               placeholder="Password"
-            />
+              />
             <span  className="eye-icon">{
               eye==true ? 
               <AiOutlineEyeInvisible onClick={()=>{handleEyeClick()}}/>
-               
+              
               :
               <AiOutlineEye onClick={()=>{handleEyeClick()}}/>
             }
             </span>
           </div>
-
+          <div className="payment-part">
+            <img  className='payment-image' src={scan} alt="" />
+            <input
+              className="payment-upload"
+              type="file"
+              required
+              onChange={handleRegisterChange}
+              name="file"
+              />
+          </div>
           <button type="submit" className="auth-sbutton"> Register</button>
         </form>
         <div className="auth-bottom-text">

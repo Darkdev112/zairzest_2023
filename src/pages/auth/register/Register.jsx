@@ -110,10 +110,10 @@ const Register = () => {
                 name="password"
                 value={registerData.password}
                 onChange={handleRegisterChange}
-                placeholder="Password"
+                placeholder="Create Your Own Password"
               />
               <span className="eye-icon">
-                {eye == true ? (
+                {eye === true ? (
                   <AiOutlineEyeInvisible
                     onClick={() => {
                       handleEyeClick();

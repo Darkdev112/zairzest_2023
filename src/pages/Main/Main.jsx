@@ -31,7 +31,7 @@ const Main = () => {
               the most awaited fest . Zairzest 3.0 presented by Zairza.
             </p>
             {!authToken && <Link to='/register'><button className="btn-rn" >Register Now</button></Link>}
-            {authToken && <Link to='/profile'><button className="btn-rn" >Dashboard</button></Link>}
+            {authToken && <Link to='/profile'><button className="btn-rn" >Go to Profile</button></Link>}
           </div>
         </div>
         <div className="right-part">
@@ -70,9 +70,9 @@ const Main = () => {
           </p>
           <p  className="para-bottom para-bottom2">out of the options available.</p>
           <div className="images-bottom">
-            <Link to={authToken ? '/tech-events': '/'}><img className="bottom-img bottom-img-fix1"  src={techEvents} alt="" height={200} /></Link>
-            <Link to={authToken ? '/tech-events': '/'}><img className="bottom-img bottom-img-fix2"  src={funEvents} alt="" height={200} /></Link>
-            <Link to={authToken ? '/tech-events': '/'}><img className="bottom-img bottom-img-fix1"  src={workshops} alt="" height={200} /></Link>
+            <Link to={authToken ? '/tech-events': '/events'}><img className="bottom-img bottom-img-fix1"  src={techEvents} alt="" height={200} /></Link>
+            <Link to={authToken ? '/tech-events': '/events'}><img className="bottom-img bottom-img-fix2"  src={funEvents} alt="" height={200} /></Link>
+            <Link to={authToken ? '/tech-events': '/events'}><img className="bottom-img bottom-img-fix1"  src={workshops} alt="" height={200} /></Link>
           </div>
         </div>
       </div>

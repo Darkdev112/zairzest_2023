@@ -1,5 +1,4 @@
 import './card.scss';
-import cheers from '../../assets/images/cheers.jpg'
 import axios from 'axios';
 import {toast} from 'react-toastify'
 
@@ -28,7 +27,7 @@ const Card = ({d}) => {
     <>
       <div className="card-container">
         <div className="imgsec">
-            <img src={cheers} alt="event" />
+            <img src={require(`../../assets/images/${d.event_name.split(" ")[0]}.png`)} alt="event" />
         </div>
         <div className="nameenroll">
             <div className="ename">{d.event_name}</div>

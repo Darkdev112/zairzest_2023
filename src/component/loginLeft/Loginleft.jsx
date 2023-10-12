@@ -1,10 +1,15 @@
 import React from 'react'
 import "./Loginleft.scss";
+import Logo from '../../assets/images/zairzest_logo.png'
+import { Link } from 'react-router-dom';
 
 const Loginleft = () => {
   return (
    <div className="login-left-container">
      <div className='loginleft'>
+        <div>
+        <Link to='/'><img src={Logo} alt="" className="logo" style={{width:"180px", marginRight: '13px', marginBottom : '10rem'}}/></Link>
+        </div>
         <div className="loginleft-text">
             <h1>Experience the Future Tech with zairza</h1>
         </div>

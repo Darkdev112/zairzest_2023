@@ -70,9 +70,9 @@ const Main = () => {
           </p>
           <p  className="para-bottom para-bottom2">out of the options available.</p>
           <div className="images-bottom">
-            <Link to={authToken ? '/tech-events': '/'}><img className="bottom-img bottom-img-fix1"  src={techEvents} alt="" height={200} /></Link>
-            <Link to={authToken ? '/tech-events': '/'}><img className="bottom-img bottom-img-fix2"  src={funEvents} alt="" height={200} /></Link>
-            <Link to={authToken ? '/tech-events': '/'}><img className="bottom-img bottom-img-fix1"  src={workshops} alt="" height={200} /></Link>
+            <Link to={authToken ? '/tech-events': '/events'}><img className="bottom-img bottom-img-fix1"  src={techEvents} alt="" height={200} /></Link>
+            <Link to={authToken ? '/tech-events': '/events'}><img className="bottom-img bottom-img-fix2"  src={funEvents} alt="" height={200} /></Link>
+            <Link to={authToken ? '/tech-events': '/events'}><img className="bottom-img bottom-img-fix1"  src={workshops} alt="" height={200} /></Link>
           </div>
         </div>
       </div>

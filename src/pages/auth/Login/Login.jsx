@@ -9,6 +9,7 @@ import { AiOutlineEye } from 'react-icons/ai';
 import {AiOutlineEyeInvisible} from 'react-icons/ai';
 
 const Login = () => {
+  const [loading, setLoading] = useState(0);
   const [eye,setEye]=useState(true);
   const [type,setType]=useState("password");
   const handleEyeClick=()=>{
@@ -28,6 +29,7 @@ const Login = () => {
   });
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
+    setLoading(1);
     try {
       console.log("login");
       const luser = "https://web-backend-3bsv.onrender.com/login/user";
@@ -95,7 +97,7 @@ const Login = () => {
             }
             </span>
           </div>
-          <button type="submit" className="auth-sbutton">Login</button>
+          <button type="submit" className="auth-sbutton">{loading===0?"Login":"Please Wait"}</button>
         </form>
         <div className="auth-bottom-text">
           Not registered ? <Link to="/register">Register</Link>

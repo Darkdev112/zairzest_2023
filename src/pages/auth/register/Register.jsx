@@ -10,6 +10,7 @@ import { AiOutlineEyeInvisible } from "react-icons/ai";
 import scan from "../../../assets/images/scan.jpg";
 
 const Register = () => {
+  const [loading, setLoading] = useState(0);
   const [eye, setEye] = useState(true);
   const [type, setType] = useState("password");
   const navigate = useNavigate();
@@ -36,6 +37,7 @@ const Register = () => {
 
   const handleRegisterSubmit = async (e) => {
     e.preventDefault();
+    setLoading(1);
     try {
       if (registerData.regdno.length !== 10) {
         toast.error("Registration Number must be 10 digits");
@@ -67,7 +69,7 @@ const Register = () => {
         <div className="auth-box">
           <h1 className="auth-heading">Experience the Future Tech</h1>
           <p className="auth-head-bottom">Register for Zairzest 3.0</p>
-          <p className="auth-head-bottom">Remember your Password while registering to login further.</p>
+          <p className="auth-head-bottom"><strong style={{color : "black"}}>Remember your Password while registering to login further.</strong></p>
           <form className="auth-box-form" onSubmit={handleRegisterSubmit}>
             <div>
               <input
@@ -140,7 +142,7 @@ const Register = () => {
             </div>
             <button type="submit" className="auth-sbutton">
               {" "}
-              Register
+              {loading===0?"Register":"Please Wait"}
             </button>
           </form>
           <div className="auth-bottom-text">

@@ -1,3 +1,7 @@
+@font-face{
+  font-family: Gilroy-regular;
+    src: url(../../assets/font/Gilroy-Thin.ttf);
+}
 .sub_nav{
     display: flex;
     height:5rem;
@@ -6,7 +10,7 @@
     padding: 1em 5%;
     padding-top: 0;
     padding-bottom: 0;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: Gilroy-regular;
     display: flex;
     justify-content: space-between;
     height:5rem;

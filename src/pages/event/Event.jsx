@@ -5,7 +5,7 @@ import Footer from '../../component/Footer/Footer';
 import axios from 'axios';
 
 
-const Event = () => {
+const Event = ({type}) => {
     const [data, setData] = useState();
     const [userEvents, setUserEvents] = useState()
     
@@ -42,7 +42,7 @@ const Event = () => {
     return (
         <>
             <Navbar />
-            <CardSection name="Tech Events" data={data} userEvents={userEvents} />
+            <CardSection name={type} data={data} userEvents={userEvents} />
             <Footer />
         </>
     )}

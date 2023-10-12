@@ -13,9 +13,9 @@ const Main = () => {
   const authToken = sessionStorage.getItem("Auth Token");
   const navigate = useNavigate()
 
-  const handleScroll = () => {
+  const handleScroll = (type) => {
     if(authToken){
-      navigate('/tech-events')
+      navigate(`/${type}`)
     }
     else{
       window.scrollTo(0, 0);
@@ -81,9 +81,9 @@ const Main = () => {
           </p>
           <p  className="para-bottom para-bottom2">out of the options available.</p>
           <div className="images-bottom">
-            <img className="bottom-img bottom-img-fix1" onClick={handleScroll} src={techEvents} alt="" height={200} />
-            <img className="bottom-img bottom-img-fix2" onClick={handleScroll} src={funEvents} alt="" height={200} />
-            <img className="bottom-img bottom-img-fix1" onClick={handleScroll} src={workshops} alt="" height={200} />
+            <img className="bottom-img bottom-img-fix1" onClick={() => {handleScroll('tech-events')}} src={techEvents} alt="" height={200} />
+            <img className="bottom-img bottom-img-fix2" onClick={() => {handleScroll('fun-events')}} src={funEvents} alt="" height={200} />
+            <img className="bottom-img bottom-img-fix1" onClick={() => {handleScroll('workshops')}} src={workshops} alt="" height={200} />
           </div>
         </div>
       </div>

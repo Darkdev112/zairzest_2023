@@ -81,8 +81,11 @@ input[type=number]::-webkit-outer-spin-button {
                 width: 200px;
             }
             .payment-upload{
+                display: flex;
+                align-items: center;
                 width: 50%;
                 height: 2.5rem;
+                margin-left: 20px;
             }
             input::file-selector-button{
                 color: white;
@@ -106,7 +109,10 @@ input[type=number]::-webkit-outer-spin-button {
     }
     .payment-part{
         flex-direction: column;
-        margin-bottom: 65px;
+        margin-bottom: 80px;
+    }
+    .payment-upload{
+        margin-top: 70px;
     }
     .auth-box-container{
         margin-bottom: 50px;

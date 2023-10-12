@@ -18,7 +18,6 @@ const Register = () => {
     regdno: "",
     email: "",
     password: "",
-    file: null,
   });
 
   const handleEyeClick = () => {
@@ -32,14 +31,7 @@ const Register = () => {
   };
 
   const handleRegisterChange = (e) => {
-    if (e.target.name === "file") {
-      setRegisteredData({
-        ...registerData,
-        [e.target.name]: e.target.files[0],
-      });
-    } else {
       setRegisteredData({ ...registerData, [e.target.name]: e.target.value });
-    }
   };
 
   const handleRegisterSubmit = async (e) => {
@@ -50,17 +42,10 @@ const Register = () => {
         return;
       }
 
-      const formdata = new FormData();
-      formdata.append("name", registerData.name);
-      formdata.append("regdno", registerData.regdno);
-      formdata.append("email", registerData.email);
-      formdata.append("password", registerData.password);
-      formdata.append("file", registerData.file);
-
       const rturl = "https://web-backend-3bsv.onrender.com/create/user";
-      const res = await axios.post(rturl, formdata, {
+      const res = await axios.post(rturl, registerData, {
         headers: {
-          "Content-Type": `multipart/form-data; boundary=${formdata._boundary}`,
+          "Content-Type": `application/json`,
         },
       });
       console.log(res);
@@ -145,14 +130,11 @@ const Register = () => {
             <div className="payment-part">
               <img className="payment-image" src={scan} alt="" />
               <div className="payment-upload">
-                <input
-                  // className="payment-upload"
-                  type="file"
-                  required
-                  onChange={handleRegisterChange}
-                  name="file"
-                />
-                <h3 className="upload-text">(Upload the screenshot of the payment for the events with Zen 3.0!)</h3>
+                <ul>
+                  <li>Scan the QR to register</li>
+                  <li>Take the screenshot and show it in Zairza inorder to get the Zen card</li>
+                  <li>For offline payment, come to Zairza, complete the payment and get the Zen card</li>
+                </ul>
               </div>
             </div>
             <button type="submit" className="auth-sbutton">

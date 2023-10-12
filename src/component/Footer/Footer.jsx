@@ -10,7 +10,7 @@ const Footer = () => {
   return (
     <div className="footer">
       <div className="top-footer">
-        <h1>Want to Know about us ?</h1>
+        <h1 className="want-foot">Want to Know about us ?</h1>
       </div>
       <div className="middle-footer">
         <div className="middle-footer-text">

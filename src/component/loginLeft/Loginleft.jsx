@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Loginleft.scss";
-import Logo from '../../assets/images/zairzest_logo.png'
+import Logo from '../../assets/images/zairzest_logo.webp'
 import { Link } from 'react-router-dom';
 
 const Loginleft = () => {

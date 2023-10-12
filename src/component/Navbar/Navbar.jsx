@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AiOutlineMenu } from 'react-icons/ai';
 import { RxCross1 } from 'react-icons/rx';
 import "./Navbar.scss"
-import Logo from "../../assets/images/zairzest_logo.png"
+import Logo from "../../assets/images/zairzest_logo.webp"
 
 const Navbar = ({userDetails}) => {
   const [showNav, setShowNav]=useState(true);

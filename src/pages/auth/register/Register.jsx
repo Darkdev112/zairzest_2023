@@ -7,7 +7,7 @@ import "../authCSS/auth.scss";
 import Loginleft from "../../../component/loginLeft/Loginleft";
 import { AiOutlineEye } from "react-icons/ai";
 import { AiOutlineEyeInvisible } from "react-icons/ai";
-import scan from "../../../assets/images/scan.jpg";
+import scan from "../../../assets/images/scan.webp";
 
 const Register = () => {
   const [loading, setLoading] = useState(0);

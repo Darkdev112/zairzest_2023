@@ -7,7 +7,7 @@
   height: 100vh;
   display: flex;
   justify-content: space-between;
-  background-image: url("../../assets/images/bg.png");
+  background-image: url("../../assets/images/bg.webp");
   background-repeat: no-repeat;
   background-size: cover;
   .left-part {
@@ -36,6 +36,7 @@
         margin-top: -1px;
       }
       .btn-rn {
+        font-size: 14.8px;
         margin-top: 20px;
         height: 45px;
         width: 130px;

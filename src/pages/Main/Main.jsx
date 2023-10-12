@@ -1,11 +1,11 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Main.scss";
-import Right from "../../assets/images/top-img.png";
-import zen from "../../assets/images/zen.png";
-import workshops from "../../assets/images/workshops.png";
-import techEvents from "../../assets/images/tech-events.png";
-import funEvents from "../../assets/images/fun-events.png";
+import Right from "../../assets/images/top-img.webp";
+import zen from "../../assets/images/zen.webp";
+import workshops from "../../assets/images/workshops.webp";
+import techEvents from "../../assets/images/tech-events.webp";
+import funEvents from "../../assets/images/fun-events.webp";
 import Footer from "../../component/Footer/Footer";
 import Navbar from '../../component/Navbar/Navbar';
 

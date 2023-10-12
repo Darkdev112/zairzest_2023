@@ -67,6 +67,7 @@ const Register = () => {
         <div className="auth-box">
           <h1 className="auth-heading">Experience the Future Tech</h1>
           <p className="auth-head-bottom">Register for Zairzest 3.0</p>
+          <p className="auth-head-bottom">Remember your Password while registering to login further.</p>
           <form className="auth-box-form" onSubmit={handleRegisterSubmit}>
             <div>
               <input

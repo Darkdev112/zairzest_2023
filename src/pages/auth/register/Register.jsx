@@ -39,10 +39,10 @@ const Register = () => {
     e.preventDefault();
     setLoading(1);
     try {
-      if (registerData.regdno.length !== 10) {
-        toast.error("Registration Number must be 10 digits");
-        return;
-      }
+      // if (registerData.regdno.length !== 10 || registerData.regdno.length !==8) {
+      //   toast.error("Registration Number must be 10 digits");
+      //   return;
+      // }
 
       const rturl = "https://web-backend-3bsv.onrender.com/create/user";
       const res = await axios.post(rturl, registerData, {

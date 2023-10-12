@@ -31,7 +31,7 @@ const Main = () => {
               the most awaited fest . Zairzest 3.0 presented by Zairza.
             </p>
             {!authToken && <Link to='/register'><button className="btn-rn" >Register Now</button></Link>}
-            {authToken && <Link to='/profile'><button className="btn-rn" >Dashboard</button></Link>}
+            {authToken && <Link to='/profile'><button className="btn-rn" >Go to Profile</button></Link>}
           </div>
         </div>
         <div className="right-part">

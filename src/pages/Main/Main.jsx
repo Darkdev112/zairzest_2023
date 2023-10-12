@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Main.scss";
 import Right from "../../assets/images/top-img.png";
 import zen from "../../assets/images/zen.png";
@@ -11,6 +11,17 @@ import Navbar from '../../component/Navbar/Navbar';
 
 const Main = () => {
   const authToken = sessionStorage.getItem("Auth Token");
+  const navigate = useNavigate()
+
+  const handleScroll = () => {
+    if(authToken){
+      navigate('/tech-events')
+    }
+    else{
+      window.scrollTo(0, 0);
+      navigate('/events')
+    }
+  }
 
   return (
     <>
@@ -70,9 +81,9 @@ const Main = () => {
           </p>
           <p  className="para-bottom para-bottom2">out of the options available.</p>
           <div className="images-bottom">
-            <Link to={authToken ? '/tech-events': '/events'}><img className="bottom-img bottom-img-fix1"  src={techEvents} alt="" height={200} /></Link>
-            <Link to={authToken ? '/tech-events': '/events'}><img className="bottom-img bottom-img-fix2"  src={funEvents} alt="" height={200} /></Link>
-            <Link to={authToken ? '/tech-events': '/events'}><img className="bottom-img bottom-img-fix1"  src={workshops} alt="" height={200} /></Link>
+            <img className="bottom-img bottom-img-fix1" onClick={handleScroll} src={techEvents} alt="" height={200} />
+            <img className="bottom-img bottom-img-fix2" onClick={handleScroll} src={funEvents} alt="" height={200} />
+            <img className="bottom-img bottom-img-fix1" onClick={handleScroll} src={workshops} alt="" height={200} />
           </div>
         </div>
       </div>

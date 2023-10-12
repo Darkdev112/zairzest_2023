@@ -33,7 +33,7 @@ const Navbar = ({userDetails}) => {
       </div>
       <div className="navbar__right">
         
-        <Link to='/register'><h4 className="navbar__text">Register</h4></Link>
+        {authToken?"":<Link to='/register'><h4 className="navbar__text">Register</h4></Link>}
         {!authToken && <Link to='/login'><h4 className="navbar__text">Sign In</h4></Link>}
         {authToken && <h4 className="navbar__text" onClick={handleLogout}>Logout</h4>}
         <AiOutlineMenu className="navbar__menu" onClick={()=>{setShowNav(false);setAnimate(0)}}/>
@@ -53,7 +53,7 @@ const Navbar = ({userDetails}) => {
       <div className="close_icon"><RxCross1 className="navbar__menu" onClick={close}/></div>
       <div className="nav-content-container">
       
-      <Link to="/register" className="aboutUs-link" onClick={close}><div className="nav-button-content">Register</div></Link>
+      {authToken?"":<Link to="/register" className="aboutUs-link" onClick={close}><div className="nav-button-content">Register</div></Link>}
       {!authToken && <Link className="aboutUs-link" to='/login'><div className="nav-button-content" onClick={close}>Sign In</div></Link>}
       {authToken && <div className="nav-button-content" onClick={() => {handleLogout();close();}}>Logout</div>}
       </div>

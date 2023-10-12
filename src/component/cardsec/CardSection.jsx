@@ -7,21 +7,42 @@ const CardSection = ({ name, data, userEvents }) => {
   const [dispData, setDispData] = useState([])
 
   const getFilteredData = () => {
-    if(name === 'Tech Events' || name === 'Explore more events'){
-      data?.forEach((event) => {
-        const index = userEvents?.findIndex((userevent) => {
-          return event._id === userevent._id
+    if(name === 'Tech Events' || name === 'Explore more events' || name==='Fun Events' || name==='Workshops'){
+      if(name !== 'Explore more events' && name!== 'Your registered events'){
+        const filteredData = data?.filter((event) => {
+          return event.event_type===name
         })
-        if (index !== -1 && name !== 'Explore more events') {
-          setDispData((prev) => [...prev,{...event, isEnrolled : 1}])
-        }
-        else if(index === -1) {
-          setDispData((prev) => [...prev,{...event, isEnrolled : 0}])
-        }
-        else{
-          
-        }
-      })
+        filteredData?.forEach((event) => {
+          const index = userEvents?.findIndex((userevent) => {
+            return event._id === userevent._id
+          })
+          if (index !== -1 && name !== 'Explore more events') {
+            setDispData((prev) => [...prev,{...event, isEnrolled : 1}])
+          }
+          else if(index === -1) {
+            setDispData((prev) => [...prev,{...event, isEnrolled : 0}])
+          }
+          else{
+            
+          }
+        })
+      }
+      else{
+        data?.forEach((event) => {
+          const index = userEvents?.findIndex((userevent) => {
+            return event._id === userevent._id
+          })
+          if (index !== -1 && name !== 'Explore more events') {
+            setDispData((prev) => [...prev,{...event, isEnrolled : 1}])
+          }
+          else if(index === -1) {
+            setDispData((prev) => [...prev,{...event, isEnrolled : 0}])
+          }
+          else{
+            
+          }
+        })
+      }
     }
     else if(name === 'Your registered events'){
       userEvents?.forEach((event) => {

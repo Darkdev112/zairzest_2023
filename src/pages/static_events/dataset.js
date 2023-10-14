@@ -45,7 +45,7 @@ export const edata = [
     },
     {
         "_id": "6527eb5f8ccf479d5ca9d649",
-        "event_name": "Tech Dez",
+        "event_name": "Design X AI",
         "event_description": "desc",
         "total_enrolls": 0,
         "event_date": "17 Oct - 3:00 PM",
@@ -56,7 +56,7 @@ export const edata = [
     },
     {
         "_id": "6527eb778ccf479d5ca9d64b",
-        "event_name": "Web Weavers",
+        "event_name": "H2GO",
         "event_description": "desc",
         "total_enrolls": 0,
         "event_date": "17 Oct - 3:00 PM",

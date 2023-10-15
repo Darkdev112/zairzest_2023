@@ -19,7 +19,7 @@ const Main = () => {
     }
     else{
       window.scrollTo(0, 0);
-      navigate('/events')
+      navigate(`/home-${type}`)
     }
   }
 

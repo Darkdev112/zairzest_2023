@@ -81,7 +81,7 @@ export const edata = [
         "event_name": "Paper Dance",
         "event_description": "desc",
         "total_enrolls": 39,
-        "event_date": "17 Oct - 4:30 PM",
+        "event_date": "18 Oct - 4:00 PM",
         "event_venue": "SAC Area",
         "event_type": "Fun Events",
         "createdAt": "2023-10-12T12:50:42.209Z",
